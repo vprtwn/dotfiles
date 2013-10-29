@@ -5,4 +5,6 @@
   * `git clone https://github.com/Lokaltog/powerline.git`
   * `git clone https://github.com/Lokaltog/powerline-fonts.git`
   * https://powerline.readthedocs.org/en/latest/fontpatching.html
-*s
+* `cp .vimrc ~/.vimrc`
+* `cp .zshrc ~/.zshrc`
+* `:BundleInstall`
