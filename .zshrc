@@ -11,6 +11,7 @@ ZSH_THEME="dpoggi"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias xc="open *.xcworkspace || open *.xcodeproj"
+alias gdf="git diff --color HEAD"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
