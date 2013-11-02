@@ -9,4 +9,5 @@
 * `cp .vimrc ~/.vimrc`
 * `cp .zshrc ~/.zshrc`
 * `:BundleInstall`
-
+* tagbar requires exuberant-ctags
+  * `brew install ctags` 

@@ -40,8 +40,12 @@ Bundle 'gmarik/vundle'
 " Bundles here:
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/syntastic'
+Bundle 'terryma/vim-smooth-scroll'
+Bundle 'tpope/vim-fugitive'
+Bundle 'majutsushi/tagbar'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'bronson/vim-trailing-whitespace'
 
 " required!
 filetype plugin indent on
@@ -49,18 +53,25 @@ filetype plugin indent on
 " :BundleList
 " :BundleInstall(!)
 " :BundleSearch(!) foo
-" BundleClean(!)
+" :BundleClean(!)
 " end Vundle config
 """""""""""""""""""""""""""
 
-" vim airline config
+" vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'solarized'
 
-" ctrlp config
+" ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+
+" vim-smooth-scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 1)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 1)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 1)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 1)<CR>
 
 """""""""""""""""""""""""""
 " NERDTree with netrw
