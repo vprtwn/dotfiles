@@ -17,3 +17,11 @@
 ### zsh
 `cp .zshrc ~/.zshrc`
 
+### rupa/z
+
+```
+cd /usr/bin
+sudo curl -O https://raw.github.com/rupa/z/master/z.sh
+sudo chmod 775 z.sh
+. /usr/bin/z.sh
+```
