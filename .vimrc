@@ -29,8 +29,6 @@ set title
 set wrap
 set wrapmargin=0
 
-:color elflord
-syntax on
 filetype indent plugin on
 
 """"""""""""""""""""""""""
@@ -50,10 +48,13 @@ Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'terryma/vim-smooth-scroll'
+Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'majutsushi/tagbar'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Shougo/neocomplcache.vim'
 
 " required!
 filetype plugin indent on
@@ -76,6 +77,12 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 
+"solarized
+syntax enable
+set background=dark
+colorscheme solarized
+
+
 " syntastic
 let g:syntastic_enable_signs=0 "sign markings (at beginning of line, before line numbers)
 let g:syntastic_enable_highlighting=2
@@ -84,11 +91,14 @@ let g:syntastic_check_on_open=1
 
 
 " vim-smooth-scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 5, 1)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 5, 1)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 5, 1)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 5, 1)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
 
 """""""""""""""""""""""""""
 " NERDTree with netrw
