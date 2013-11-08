@@ -43,6 +43,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'molokai'
 
+" vim-gitgutter
+let g:gitgutter_enabled = 1
+highlight clear SignColumn
+
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'

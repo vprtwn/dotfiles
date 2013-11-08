@@ -1,0 +1,9 @@
+[alias]
+
+[user]
+	name = Ben Guo
+	email = ben@venmo.com
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[push]
+	default = simple
