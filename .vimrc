@@ -1,35 +1,4 @@
-set ai
-set autoindent
-set background=dark
-set cmdheight=2
-set cursorline
-set et
-set equalalways
-set grepprg=ack
-set hlsearch
-set incsearch
-set ignorecase
-set linebreak
-set laststatus=2
-set mouse=a
-set nolist
-set nostartofline
 set number
-set ruler
-set showcmd
-set showmode
-set textwidth=0
-set si
-set sw=4
-set smartcase
-set splitbelow splitright
-set tags=./tags
-set textwidth=0
-set title
-set wrap
-set wrapmargin=0
-
-filetype indent plugin on
 
 """"""""""""""""""""""""""
 " start Vundle config
@@ -54,7 +23,10 @@ Bundle 'majutsushi/tagbar'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'wjakob/vim-tomorrow-night'
 Bundle 'Shougo/neocomplcache.vim'
+Bundle 'olivierverdier/python-syntax.vim'
+Bundle 'tpope/vim-sensible'
 
 " required!
 filetype plugin indent on
@@ -69,19 +41,11 @@ filetype plugin indent on
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized'
-
+let g:airline_theme = 'molokai'
 
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
-
-"solarized
-syntax enable
-set background=dark
-colorscheme solarized
-
 
 " syntastic
 let g:syntastic_enable_signs=0 "sign markings (at beginning of line, before line numbers)
@@ -89,16 +53,33 @@ let g:syntastic_enable_highlighting=2
 let g:syntastic_auto_loc_list=0
 let g:syntastic_check_on_open=1
 
-
 " vim-smooth-scroll
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
+" python-syntax
+syntax on
+let python_highlight_all = 1
+let python_highlight_builtins = 1
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+
+" cursorline only in active buffer
+augroup CursorLine
+  au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+      au WinLeave * setlocal nocursorline
+      augroup END
+
+" colors
+syntax enable
+set background=dark
+" colorscheme solarized
+colorscheme Tomorrow-Night
+
 
 """""""""""""""""""""""""""
 " NERDTree with netrw
@@ -134,11 +115,4 @@ let g:netrw_liststyle=3
 " Change directory to the current buffer when opening files.
 set autochdir
 """""""""""""""""""""""""""
-
-" cursorline only in active buffer
-augroup CursorLine
-  au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-      au WinLeave * setlocal nocursorline
-      augroup END
 
