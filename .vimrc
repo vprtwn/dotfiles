@@ -29,8 +29,8 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'wjakob/vim-tomorrow-night'
 Bundle 'Shougo/neocomplcache.vim'
-Bundle 'olivierverdier/python-syntax.vim'
 Bundle 'tpope/vim-sensible'
+Bundle 'nvie/vim-flake8'
 
 " required!
 filetype plugin indent on
@@ -66,11 +66,6 @@ noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
-
-" python-syntax
-syntax on
-let python_highlight_all = 1
-let python_highlight_builtins = 1
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
