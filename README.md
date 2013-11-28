@@ -11,8 +11,12 @@
   * https://powerline.readthedocs.org/en/latest/fontpatching.html
 * `cp .vimrc ~/.vimrc`
 * `vim +BundleInstall +qall`
-* tagbar requires exuberant-ctags
-  * `brew install ctags` 
+* compile YouCompleteMe
+    * `cd ~/.vim/bundle/YouCompleteMe`
+    * `./install.sh --clang-completer --omni-sharp-completer`
+
+### Ag
+* `brew install the_silver_searcher`
 
 ### zsh
 `cp .zshrc ~/.zshrc`

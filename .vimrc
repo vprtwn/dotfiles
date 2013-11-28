@@ -3,43 +3,55 @@ set tabstop=8
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-set hlsearch "from JG
+set noswapfile
+set nobackup
+set mouse=a
 
 """"""""""""""""""""""""""
-" start Vundle config
-set nocompatible
-filetype off
+" start Neobundle config
+if has ('vim_starting')
+    set nocompatible
+    set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Bundles here:
-Bundle 'bling/vim-airline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'majutsushi/tagbar'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'wjakob/vim-tomorrow-night'
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'tpope/vim-sensible'
-Bundle 'nvie/vim-flake8'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'wjakob/vim-tomorrow-night'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'tpope/vim-sensible'
+NeoBundle 'nvie/vim-flake8'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 " required!
 filetype plugin indent on
 
-" :BundleList
-" :BundleInstall(!)
-" :BundleSearch(!) foo
-" :BundleClean(!)
-" end Vundle config
+" :NeoBundleList
+" :NeoBundleInstall(!)
+" :NeoBundleSearch(!) foo
+" :NeoBundleClean(!)
+
+" Installation check.
+NeoBundleCheck
 """""""""""""""""""""""""""
 
 " vim-airline
@@ -51,18 +63,21 @@ let g:airline_theme = 'molokai'
 let g:gitgutter_enabled = 1
 highlight clear SignColumn
 
-" ctrlp
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" unite
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden'
+let g:unite_source_grep_recursive_opt = ''
+let g:unite_source_history_yank_enable = 1
+nnoremap <C-p> :Unite file_mru file_rec/async:! -start-insert -buffer-name=files<cr>
+nnoremap <space>s :Unite -quick-match buffer<cr>
+nnoremap <space>/ :Unite grep:.<cr>
+nnoremap <space>y :Unite history/yank<cr>
 
 " syntastic
 let g:syntastic_enable_signs=0 "sign markings (at beginning of line, before line numbers)
 let g:syntastic_enable_highlighting=2
 let g:syntastic_auto_loc_list=0
 let g:syntastic_check_on_open=1
-
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
 
 " cursorline only in active buffer
 augroup CursorLine
@@ -76,11 +91,6 @@ syntax enable
 set background=dark
 " colorscheme solarized
 colorscheme Tomorrow-Night
-
-" gmcs
-compiler! gmcs
-set mp=gmcs\ -recurse:*.cs\ -lib:/Applications/Unity/Unity.app/Contents/Frameworks/\ -lib:/Applications/Unity/Unity.app/Contents/Frameworks/Mono.framework/\ -r:UnityEngine\ -r:UnityEditor\ -r:Boo.Lang\ -nowarn:0169\ -target:module
-set autowrite
 
 """""""""""""""""""""""""""
 " NERDTree with netrw
