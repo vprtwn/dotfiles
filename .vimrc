@@ -3,6 +3,7 @@ set tabstop=8
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+set hlsearch "from JG
 
 """"""""""""""""""""""""""
 " start Vundle config
@@ -20,7 +21,6 @@ Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'terryma/vim-smooth-scroll'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 Bundle 'majutsushi/tagbar'
@@ -61,12 +61,6 @@ let g:syntastic_enable_highlighting=2
 let g:syntastic_auto_loc_list=0
 let g:syntastic_check_on_open=1
 
-" vim-smooth-scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
-
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
@@ -83,6 +77,10 @@ set background=dark
 " colorscheme solarized
 colorscheme Tomorrow-Night
 
+" gmcs
+compiler! gmcs
+set mp=gmcs\ -recurse:*.cs\ -lib:/Applications/Unity/Unity.app/Contents/Frameworks/\ -lib:/Applications/Unity/Unity.app/Contents/Frameworks/Mono.framework/\ -r:UnityEngine\ -r:UnityEditor\ -r:Boo.Lang\ -nowarn:0169\ -target:module
+set autowrite
 
 """""""""""""""""""""""""""
 " NERDTree with netrw
