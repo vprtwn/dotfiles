@@ -21,7 +21,6 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Bundles here:
-NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'make -f make_mingw32.mak',
@@ -31,17 +30,28 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-commentary'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'tpope/vim-sensible'
+
+" Git
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+
+" Syntax
+NeoBundle 'tpope/vim-commentary'
 NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'wjakob/vim-tomorrow-night'
 NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'tpope/vim-sensible'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'nvie/vim-flake8'
+NeoBundle 'plasticboy/vim-markdown'
+
+" Tags
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-easytags'
+
+" Colors
+NeoBundle 'altercation/vim-colors-solarized'
 
 " required!
 filetype plugin indent on
@@ -58,7 +68,7 @@ NeoBundleCheck
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'solarized'
 
 " vim-gitgutter
 let g:gitgutter_enabled = 1
@@ -85,10 +95,21 @@ nnoremap <C-t> :TagbarToggle<cr>
 
 " colors
 syntax enable
-set background=dark
-" colorscheme solarized
-colorscheme Tomorrow-Night
+set background=light
+let g:solarized_termcolors=256
+colorscheme solarized
 set cursorline
+
+" :Q should quit
+ca Q q
+ca Q! q!
+ca Qa qa
+ca qa1 qa!
+
+" :W should write
+ca W w
+ca Wq wq
+ca Wqa wqa
 
 """""""""""""""""""""""""""
 " NERDTree with netrw

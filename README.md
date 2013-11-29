@@ -11,6 +11,8 @@
   * https://powerline.readthedocs.org/en/latest/fontpatching.html
 * compile YouCompleteMe
     * `cd ~/.vim/bundle/YouCompleteMe`
+    * For .NET completions, download Mono
+        * http://monodevelop.com/Download
     * `./install.sh --clang-completer --omni-sharp-completer`
 * ctags
     * `brew install ctags`

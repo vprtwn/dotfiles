@@ -1,0 +1,51 @@
+remap Caps lock
+imap <C-a> <Esc>
+vmap <C-a> <Esc>
+
+" Case-insensitive searching.
+set ignorecase
+
+" But case-sensitive if expression contains a capital letter.
+set smartcase
+
+" Default to global substitutions on lines
+set gdefault
+
+" Use the system pasteboard
+set pasteboard
+
+" Move between assistant editors
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
+" Comment & uncomment
+nnoremap <Space>c :xccmd commentAndUncommentCurrentLines<CR>
+
+" Edit in scope
+nnoremap <Space>e :xccmd toggleTokenizedEditing<CR>
+
+" Open quickly
+nnoremap <Space>t :xccmd openQuickly<CR>
+
+" Open & close assistant
+nnoremap <Space>v <C-w>n :xccmd openQuickly<CR>
+nnoremap <Space>w <C-w>q
+
+" Indent selection
+nnoremap <Space>i ==
+
+" Open navigator
+nnoremap <Space>n :xccmd toggleNavigatorsVisibility<CR>
+
+" :Q should quit
+ca Q q
+ca Q! q!
+ca Qa qa
+ca qa1 qa!
+
+" :W should write
+ca W w
+ca Wq wq
+ca Wqa wqa
