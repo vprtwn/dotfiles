@@ -21,6 +21,3 @@
     * `sudo curl -O https://raw.github.com/rupa/z/master/z.sh`
     * `sudo chmod 775 z.sh`
     * `. /usr/bin/z.sh`
-
-# :ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean::ocean:
-
