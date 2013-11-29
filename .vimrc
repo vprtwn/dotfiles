@@ -41,7 +41,6 @@ NeoBundle 'wjakob/vim-tomorrow-night'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'nvie/vim-flake8'
-NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'majutsushi/tagbar'
 
 " required!
