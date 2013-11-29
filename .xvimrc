@@ -1,6 +1,8 @@
-remap Caps lock
-imap <C-a> <Esc>
-vmap <C-a> <Esc>
+imap <C-A> <Home>
+imap <C-E> <End>
+imap <C-F> <Right>
+imap <C-B> <Left>
+imap <C-D> <Del>
 
 " Case-insensitive searching.
 set ignorecase
