@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # colors
 cp -v Resesif.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Resesif.dvtcolortheme
 
@@ -7,10 +9,11 @@ cp -v DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
 # vim
 cp -v .vimrc ~/.vimrc
 vim +NeoBundleInstall +qall
+sh ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer --omni-sharp-completer
 
-# zsh
+# zshrc
 cp -v .zshrc ~/.zshrc
 
-# git
+# gitconfig
 cp -v .gitconfig ~/.gitconfig
 

@@ -6,6 +6,7 @@ set softtabstop=4
 set noswapfile
 set nobackup
 set mouse=a
+set cursorline
 
 """"""""""""""""""""""""""
 " start Neobundle config
@@ -41,6 +42,7 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'majutsushi/tagbar'
 
 " required!
 filetype plugin indent on
@@ -79,18 +81,15 @@ let g:syntastic_enable_highlighting=2
 let g:syntastic_auto_loc_list=0
 let g:syntastic_check_on_open=1
 
-" cursorline only in active buffer
-augroup CursorLine
-  au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-      au WinLeave * setlocal nocursorline
-      augroup END
+" tagbar
+nnoremap <C-t> :TagbarToggle<cr>
 
 " colors
 syntax enable
 set background=dark
 " colorscheme solarized
 colorscheme Tomorrow-Night
+set cursorline
 
 """""""""""""""""""""""""""
 " NERDTree with netrw
@@ -109,7 +108,7 @@ function! ToggleVExplorer()
       endif
   else
       exec '1wincmd w'
-      Vexplore
+      20Vexplore
       let t:expl_buf_num = bufnr("%")
   endif
 endfunction
@@ -117,7 +116,7 @@ map <silent> <C-E> :call ToggleVExplorer()<CR>
 
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 3
 let g:netrw_altv = 1
 
 " Default to tree mode
