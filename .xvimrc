@@ -1,9 +1,3 @@
-imap <C-A> <Home>
-imap <C-E> <End>
-imap <C-F> <Right>
-imap <C-B> <Left>
-imap <C-D> <Del>
-
 " Case-insensitive searching.
 set ignorecase
 
@@ -21,25 +15,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
-
-" Comment & uncomment
-nnoremap <Space>c :xccmd commentAndUncommentCurrentLines<CR>
-
-" Edit in scope
-nnoremap <Space>e :xccmd toggleTokenizedEditing<CR>
-
-" Open quickly
-nnoremap <Space>t :xccmd openQuickly<CR>
-
-" Open & close assistant
-nnoremap <Space>v <C-w>n :xccmd openQuickly<CR>
-nnoremap <Space>w <C-w>q
-
-" Indent selection
-nnoremap <Space>i ==
-
-" Open navigator
-nnoremap <Space>n :xccmd toggleNavigatorsVisibility<CR>
 
 " :Q should quit
 ca Q q
