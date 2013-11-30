@@ -93,10 +93,13 @@ let g:syntastic_check_on_open=1
 " tagbar
 nnoremap <C-t> :TagbarToggle<cr>
 
+" easytags
+let g:easytags_updatetime_warn=0
+
 " colors
 syntax enable
-set background=light
-let g:solarized_termcolors=256
+set background=dark
+" let g:solarized_termcolors=256
 colorscheme solarized
 set cursorline
 
@@ -110,6 +113,16 @@ ca qa1 qa!
 ca W w
 ca Wq wq
 ca Wqa wqa
+
+" C-hjkl to move between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" C-left/right to move between tabs
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 
 """""""""""""""""""""""""""
 " NERDTree with netrw
