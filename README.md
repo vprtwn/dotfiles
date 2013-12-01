@@ -6,8 +6,6 @@
     * curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 * `./install`
 * Patch powerline fonts
-  * `git clone https://github.com/Lokaltog/powerline.git`
-  * `git clone https://github.com/Lokaltog/powerline-fonts.git`
   * https://powerline.readthedocs.org/en/latest/fontpatching.html
 * compile YouCompleteMe
     * `cd ~/.vim/bundle/YouCompleteMe`

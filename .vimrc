@@ -96,6 +96,9 @@ nnoremap <C-t> :TagbarToggle<cr>
 " easytags
 let g:easytags_updatetime_warn=0
 
+" markdown
+let g:vim_markdown_folding_disabled=1
+
 " colors
 syntax enable
 set background=dark
