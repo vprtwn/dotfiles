@@ -3,6 +3,7 @@
 cp -v  ~/.vimrc .vimrc
 cp -v ~/.xvimrc .xvimrc
 cp -v ~/.zshrc .zshrc
+cp -v ~/.zprofile .zprofile
 cp -v ~/Library/KeyBindings/DefaultKeyBinding.dict DefaultKeyBinding.dict
 cp -v ~/.gitconfig .gitconfig
 cp -vaf ~/Library/Developer/Xcode/UserData/FontAndColorThemes/. colors-xcode
