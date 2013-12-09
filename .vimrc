@@ -44,6 +44,7 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'jnwhiteh/vim-golang'
 
 " Tags
 NeoBundle 'majutsushi/tagbar'
@@ -98,6 +99,15 @@ let g:easytags_updatetime_warn=0
 
 " markdown
 let g:vim_markdown_folding_disabled=1
+
+" go
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+au BufRead,BufNewFile *.go set noet ts=4 sw=4
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " colors
 syntax enable

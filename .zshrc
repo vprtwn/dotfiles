@@ -43,10 +43,13 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx sublime z)
+plugins=(git golang osx pod python heroku z)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:$PATH:/Users/benguo/.rvm/gems/ruby-1.9.3-p392/bin:/Users/benguo/.rvm/gems/ruby-1.9.3-p392@global/bin:/Users/benguo/.rvm/rubies/ruby-1.9.3-p392/bin:/Users/benguo/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
