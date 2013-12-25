@@ -40,7 +40,8 @@ NeoBundle 'airblade/vim-gitgutter'
 " Syntax
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'Valloric/YouCompleteMe'
+" NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'plasticboy/vim-markdown'
@@ -113,6 +114,9 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 syntax enable
 set background=dark
 " let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+" let g:solarized_bold=0
+let g:solarized_italic=0
 colorscheme solarized
 set cursorline
 

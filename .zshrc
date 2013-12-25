@@ -4,6 +4,11 @@ ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go
 export PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH:$GOPATH/bin
 
+. /usr/bin/z.sh
+function precmd () {
+    z --add "$(pwd -P)"
+}
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
