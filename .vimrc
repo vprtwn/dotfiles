@@ -40,17 +40,15 @@ NeoBundle 'airblade/vim-gitgutter'
 " Syntax
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'bronson/vim-trailing-whitespace'
-" NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'jnwhiteh/vim-golang'
-
-" Tags
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-easytags'
+NeoBundle 'tpope/vim-fireplace'
+NeoBundle 'tpope/vim-classpath'
+NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'lambdatoast/elm.vim'
 
 " Colors
 NeoBundle 'altercation/vim-colors-solarized'
@@ -92,6 +90,9 @@ let g:syntastic_enable_highlighting=2
 let g:syntastic_auto_loc_list=0
 let g:syntastic_check_on_open=1
 
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
 " tagbar
 nnoremap <C-t> :TagbarToggle<cr>
 
@@ -110,12 +111,27 @@ syntax on
 au BufRead,BufNewFile *.go set noet ts=4 sw=4
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
+" html
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+
+" js
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+" css
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+
+" rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " colors
 syntax enable
 set background=dark
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-" let g:solarized_bold=0
+let g:solarized_bold=0
 let g:solarized_italic=0
 colorscheme solarized
 set cursorline
