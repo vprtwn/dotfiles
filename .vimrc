@@ -30,6 +30,7 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-sensible'
 
@@ -49,6 +50,7 @@ NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'tpope/vim-classpath'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'lambdatoast/elm.vim'
+NeoBundle 'vim-ruby/vim-ruby'
 
 " Colors
 NeoBundle 'altercation/vim-colors-solarized'
@@ -111,6 +113,7 @@ syntax on
 au BufRead,BufNewFile *.go set noet ts=4 sw=4
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
+<<<<<<< HEAD
 " html
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
@@ -125,6 +128,10 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+=======
+" ruby
+au FileType ruby setl sw=2 sts=2
+>>>>>>> Updates
 
 " colors
 syntax enable

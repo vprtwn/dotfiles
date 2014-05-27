@@ -1,0 +1,9 @@
+{
+    "layouts": [
+        "tall",
+        "fullscreen",
+        "widescreen-tall"
+    ],
+    "mouse-follows-focus": true,
+    "focus-follows-mouse": true
+}
