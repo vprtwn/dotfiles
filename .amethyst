@@ -5,5 +5,7 @@
         "widescreen-tall"
     ],
     "mouse-follows-focus": true,
-    "focus-follows-mouse": true
+    "focus-follows-mouse": true,
+    "enables-layout-hud": false,
+    "enables-layout-hud-on-space-change": false
 }
