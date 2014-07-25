@@ -17,3 +17,5 @@ cp -v .zshrc ~/.zshrc
 # gitconfig
 cp -v .gitconfig ~/.gitconfig
 
+# hydra
+cp -v -r .hydra ~/.hydra

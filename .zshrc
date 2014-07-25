@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 export GOPATH=$HOME/go
-export PATH=/Applications/Postgres93.app/Contents/MacOS/bin:$PATH:$GOPATH/bin
+export PATH=/usr/local/bin:$PATH:$GOPATH/bin
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

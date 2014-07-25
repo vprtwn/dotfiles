@@ -7,6 +7,8 @@ set noswapfile
 set nobackup
 set mouse=a
 set cursorline
+set term=builtin_ansi
+
 
 """"""""""""""""""""""""""
 " start Neobundle config

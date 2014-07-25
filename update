@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -v ~/.amethyst .amethyst
+cp -v -r ~/.hydra .hydra
 cp -v  ~/.vimrc .vimrc
 cp -v ~/.xvimrc .xvimrc
 cp -v ~/.zshrc .zshrc
