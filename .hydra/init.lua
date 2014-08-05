@@ -1,54 +1,27 @@
--- refers to grid.lua in this directory, taken from the Hydra wiki: https://github.com/sdegutis/hydra/wiki/Useful-Hydra-libraries
-require "grid"
+dofile(package.searchpath("grid", package.path))
+dofile(package.searchpath("menuconfig", package.path))
 
--- hydra.alert "Hydra, at your service."
+hydra.alert("Hydra config loaded", 0.5)
 
 pathwatcher.new(os.getenv("HOME") .. "/.hydra/", hydra.reload):start()
-autolaunch.set(true)
+hydra.autolaunch.set(true)
 
-menu.show(function()
-    return {
-      {title = "About Hydra", fn = hydra.showabout},
-      {title = "-"},
-      {title = "Quit", fn = os.exit},
-    }
-end)
+local ctrlaltcmd = {"ctrl", "alt", "cmd"}
+local ctrlcmd = {"ctrl", "cmd"}
 
-local mash = {"cmd", "alt", "ctrl"}
-local mashshift = {"cmd", "alt", "shift"}
+hotkey.bind(ctrlcmd, 'K', ext.grid.fullscreen)
+hotkey.bind(ctrlcmd, 'H', ext.grid.lefthalf)
+hotkey.bind(ctrlcmd, 'L', ext.grid.righthalf)
+hotkey.bind(ctrlcmd, 'P', ext.grid.pushwindow)
+hotkey.bind(ctrlcmd, 'U', ext.grid.center)
 
-local function opendictionary()
-  application.launchorfocus("Dictionary")
-end
+hotkey.bind(ctrlcmd, 'N', ext.grid.topleft)
+hotkey.bind(ctrlcmd, 'M', ext.grid.bottomleft)
+hotkey.bind(ctrlcmd, ',', ext.grid.topright)
+hotkey.bind(ctrlcmd, '.', ext.grid.bottomright)
 
-hotkey.bind(mash, 'D', opendictionary)
+hotkey.bind({"ctrl", "alt"}, 'Y', function() application.launchorfocus("iTerm") end)
+hotkey.bind(ctrlaltcmd, 'R', function() repl.open(); logger.show() end)
 
-hotkey.bind(mash, ';', function() ext.grid.snap(window.focusedwindow()) end)
-hotkey.bind(mash, "'", function() fnutils.map(window.visiblewindows(), ext.grid.snap) end)
-
-hotkey.bind(mash, '=', function() ext.grid.adjustwidth( 1) end)
-hotkey.bind(mash, '-', function() ext.grid.adjustwidth(-1) end)
-
-hotkey.bind(mashshift, 'H', function() window.focusedwindow():focuswindow_west() end)
-hotkey.bind(mashshift, 'L', function() window.focusedwindow():focuswindow_east() end)
-hotkey.bind(mashshift, 'K', function() window.focusedwindow():focuswindow_north() end)
-hotkey.bind(mashshift, 'J', function() window.focusedwindow():focuswindow_south() end)
-
-hotkey.bind(mash, 'M', ext.grid.maximize_window)
-
-hotkey.bind(mash, 'N', ext.grid.pushwindow_nextscreen)
-hotkey.bind(mash, 'P', ext.grid.pushwindow_prevscreen)
-
-hotkey.bind(mash, 'J', ext.grid.pushwindow_down)
-hotkey.bind(mash, 'K', ext.grid.pushwindow_up)
-hotkey.bind(mash, 'H', ext.grid.pushwindow_left)
-hotkey.bind(mash, 'L', ext.grid.pushwindow_right)
-
-hotkey.bind(mash, 'U', ext.grid.resizewindow_taller)
-hotkey.bind(mash, 'O', ext.grid.resizewindow_wider)
-hotkey.bind(mash, 'I', ext.grid.resizewindow_thinner)
-
-hotkey.bind(mash, 'X', logger.show)
-hotkey.bind(mash, "R", repl.open)
-
-updates.check()
+hotkey.bind({}, 'F1', function() brightness.set(brightness.get() - 6.25) end)
+hotkey.bind({}, 'F2', function() brightness.set(brightness.get() + 6.25) end)
