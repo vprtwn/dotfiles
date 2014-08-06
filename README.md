@@ -14,6 +14,7 @@
     * `. /usr/bin/z.sh`
 
 ## Software
+* [http://www.boastr.net/](Better Touch Tool)
 * nvALT
 * Sketch
 * Sublime Text
