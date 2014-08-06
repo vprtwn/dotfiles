@@ -33,7 +33,7 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'bling/vim-airline'
+" NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-sensible'
 
 " Git
@@ -47,7 +47,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'Shougo/neocomplcache.vim'
 " NeoBundle 'nvie/vim-flake8'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'jnwhiteh/vim-golang'
+" NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'vim-ruby/vim-ruby'
 
 " Tags
