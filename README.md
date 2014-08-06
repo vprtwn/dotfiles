@@ -16,3 +16,5 @@
 ## Software
 * nvALT
 * Sketch
+* Sublime Text
+   * Vintageous
