@@ -18,3 +18,5 @@
 * Sketch
 * Sublime Text
    * Vintageous
+   * MarkdownEditing
+   * SublimeLinter
