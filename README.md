@@ -21,3 +21,4 @@
    * Vintageous
    * MarkdownEditing
    * SublimeLinter
+* [DotSnap](https://github.com/DotMail/DotSnap)
