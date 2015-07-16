@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-
-export GOPATH=$HOME/go
-export PATH=/usr/local/bin:$PATH:$GOPATH/bin
+. ~/.rbenvrc
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -11,11 +9,24 @@ export PATH=/usr/local/bin:$PATH:$GOPATH/bin
 ZSH_THEME="dpoggi"
 
 # aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
 alias xc="open *.xcworkspace || open *.xcodeproj"
-alias gdf="git diff --color HEAD"
-alias c="clear"
+alias gdf="git diff"
+alias idk="printf \"¯\_(ツ)_/¯\" | pbcopy && echo \"¯\_(ツ)_/¯ copied to clipboard\""
+alias shrug="idk"
+alias lod="printf \"ಠ_ಠ\" | pbcopy && echo \"ಠ_ಠ copied to clipboard\""
+alias disapprove="lod"
+
+## fasd aliases
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+alias rmdd='rm -rf ~/Library/Developer/Xcode/DerivedData/*'
+alias rmmc='rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache"'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

@@ -1,10 +1,14 @@
 [user]
 	name = Ben Guo
-	email = ben@venmo.com
+	email = bg@stripe.com
+
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-        fuckit = 'git reset --hard; git clean -fd'
+	lg = log --graph --decorate --oneline
+	lol = log --graph --decorate --oneline
+	lola = log --graph --decorate --oneline --all
+
 [push]
 	default = simple
+
 [core]
-	editor = /usr/local/bin/vim
+	editor = /usr/bin/vim
