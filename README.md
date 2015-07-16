@@ -11,3 +11,5 @@
 * Shell: zsh (try fish)
 * Autogjump: fasd
 * Window manager: ShiftIt
+* Spotlight plugins: Flashlight
+* Flux
